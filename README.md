@@ -77,7 +77,7 @@ DoggyDoor was made to be run on your local machine with only a few simple comman
   $ pip install -r dependencies.txt
   ```
 
-  * #### Run DoggyDoor
+  * #### Run DoggyDoor.py
    Finally, cd into the folder and run DoggyDoor.py
 
   ```
