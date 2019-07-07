@@ -1,19 +1,19 @@
-<img src="images/logo.png" align="right" />
+<img src="images/logo.png"  align= right  />
 
 # DoggyDoor
 A Python-Flask web application that attempts to eliminate some of the most common barriers to dog adoption.
 
-<a href="https://www.python.org/">
-<img src="https://img.shields.io/badge/Built%20With-Python3-red.svg" />
+<a href= "https://www.python.org/" >
+<img src= "https://img.shields.io/badge/Built%20With-Python3-red.svg"  />
 </a>
-<a href="http://flask.pocoo.org/">
-<img src="https://img.shields.io/badge/Built%20With-Flask-pink.svg" />
+<a href= "http://flask.pocoo.org/" >
+<img src= "https://img.shields.io/badge/Built%20With-Flask-pink.svg"  />
 </a>
-<a href="https://pytorch.org/">
-<img src="https://img.shields.io/badge/Built%20With-PyTorch-green.svg" />
+<a href= "https://pytorch.org/" >
+<img src= "https://img.shields.io/badge/Built%20With-PyTorch-green.svg"  />
 </a>
-<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
-<img src="https://img.shields.io/badge/License-GNU 3.0-Blue.svg" />
+<a href= "https://www.gnu.org/licenses/gpl-3.0.en.html" >
+<img src= "https://img.shields.io/badge/License-GNU3.0-Blue.svg"  />
 </a>
 
 ## General info
@@ -56,7 +56,7 @@ While the shelters do their best to attract quality adopters with lighthearted p
 ## Solution
 DoggyDoor is an interactive web application that attempts to give shelter managers or potential adopting families more information and insight into the dog they are interested in.
 
-By simply uploading an image of a dog, DoggyDoor will use a machine learning algorithm trained on thousands of images to guess the breed/breeds of dog in the image and pull information from "The American Kennel Club" to give users vital information on the dog.
+By simply uploading an image of a dog, DoggyDoor will use a machine learning algorithm trained on thousands of images to guess the breed/breeds of dog in the image and pull information from  "The American Kennel Club"  to give users vital information on the dog.
 
 ![solution](http://g.recordit.co/f4vqDhLhhz.gif)
 
@@ -89,7 +89,7 @@ DoggyDoor was made to be run on your local machine with only a few simple comman
 
   ![problem](./images/cmd.JPG)
 
-  In the output above, Flask provides you with the localhost port that DoggyDoor is out of. It's usually "localhost:5000" however, it could vary and the best practice is to simply look at the terminal/cmd output.
+  In the output above, Flask provides you with the localhost port that DoggyDoor is out of. It's usually  localhost:5000  however, it could vary and the best practice is to simply look at the terminal/cmd output.
 
   Navigate to that port and starting unlocking more information about your furry friend!
 
@@ -112,22 +112,22 @@ Obviously this is a very simple implementation of a dog breed classification alg
 This section is for someone who wants to build a similar project as DoggyDoor and wants some help finding resources and common mistakes.
 
 #### Learning About Keras
-  Before starting this project I had no idea what Keras was. Most of my machine learning knowledge and practice has come from [Andrew Ng's free Machine Learning course]("https://www.coursera.org/learn/machine-learning"), which is almost 10 years old and based mostly in MatLab. In order to get acquainted with modern machine learning practices in Python I followed a short [tutorial]("https://www.youtube.com/watch?v=wQ8BIBpya2k") on Keras in the similar arena of Digit Classification.
+  Before starting this project I had no idea what Keras was. Most of my machine learning knowledge and practice has come from [Andrew Ng's free Machine Learning course]( https://www.coursera.org/learn/machine-learning ), which is almost 10 years old and based mostly in MatLab. In order to get acquainted with modern machine learning practices in Python I followed a short [tutorial]( https://www.youtube.com/watch?v=wQ8BIBpya2k ) on Keras in the similar arena of Digit Classification.
 
   ![digits](./images/ipy.JPG)
 
-  This is really a great [tutorial]("https://www.youtube.com/watch?v=wQ8BIBpya2k") for beginners and I would highly recommend [Sentdex]("https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ") (the author) as a learning resource for AI overall.
+  This is really a great [tutorial]( https://www.youtube.com/watch?v=wQ8BIBpya2k ) for beginners and I would highly recommend [Sentdex]( https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ ) (the author) as a learning resource for AI overall.
 
 #### Convolutional Neural Networks
-  The next step after getting some practice with Keras was to build a simple Convolutional Neural Network, or CNN. This network architecture is the backbone for image classification and If I was to build a classifier for anything more complex than digits I would need more practice. Amazingly, [Sentdex]("https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ") had an entire [tutorial series]("https://www.youtube.com/watch?v=gT4F3HGYXf4") on building CNN's in Keras to classify Dogs and Cats!
+  The next step after getting some practice with Keras was to build a simple Convolutional Neural Network, or CNN. This network architecture is the backbone for image classification and If I was to build a classifier for anything more complex than digits I would need more practice. Amazingly, [Sentdex]( https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ ) had an entire [tutorial series]( https://www.youtube.com/watch?v=gT4F3HGYXf4 ) on building CNN's in Keras to classify Dogs and Cats!
 
   I followed along with his tutorial, making a few adjustments as I went to prepare the first model to classify 120 dog breeds instead of a binary classification between dogs and cats.
 
   ![digits](./images/ipy2.JPG)
 
-  **Note**, The dataset for this project can be found [here]("http://vision.stanford.edu/aditya86/ImageNetDogs/"), or below in the [Acknowledgments](#acknowledgments).
+  **Note**, The dataset for this project can be found [here]( http://vision.stanford.edu/aditya86/ImageNetDogs/ ), or below in the [Acknowledgments](#acknowledgments).
 
-  Again, I cannot recommend his [video series]("https://www.youtube.com/watch?v=gT4F3HGYXf4") highly enough!
+  Again, I cannot recommend his [video series]( https://www.youtube.com/watch?v=gT4F3HGYXf4 ) highly enough!
 
 #### Initial CNN Architectures
   Now, armed with my new knowledge on CNN's and image classification, I set off to train a basic network to classify 120 different dog breeds. How hard could it be? I watched a tutorial after all.
@@ -147,20 +147,20 @@ This section is for someone who wants to build a similar project as DoggyDoor an
 #### Transfer Learning
  At this point I had reached near the limits of the architecture of CNN I was using and after further research, discovered that by implementing a top layer trained on other images, and retraining it, I could pass on new and more features that my CNN could then interpret.  
 
- This strategy is called '[Transfer Learning]("https://machinelearningmastery.com/transfer-learning-for-deep-learning/")' and has been found to greatly increase the accuracy of image classification networks. It also cuts down on the training time needed to achieve that increased accuracy.
+ This strategy is called '[Transfer Learning]( https://machinelearningmastery.com/transfer-learning-for-deep-learning/ )' and has been found to greatly increase the accuracy of image classification networks. It also cuts down on the training time needed to achieve that increased accuracy.
 
  More concretely,
- >"Transfer learning and domain adaptation refer to the situation where what has been learned in one setting … is exploited to improve generalization in another setting"
+ > Transfer learning and domain adaptation refer to the situation where what has been learned in one setting … is exploited to improve generalization in another setting
  — Page 526, Deep Learning, 2016.
 
- By implementing a popular image classification network call [InceptionV3]("https://medium.com/@sh.tsang/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c") trained on the [ImageNet]("http://www.image-net.org/") dataset of over 14M images, the network was able to achieve **~80%** validation accuracy.
+ By implementing a popular image classification network call [InceptionV3]( https://medium.com/@sh.tsang/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c ) trained on the [ImageNet]( http://www.image-net.org/ ) dataset of over 14M images, the network was able to achieve **~80%** validation accuracy.
 
 ![digits](./images/tensorboard2.JPG)
 
 #### Pretrained Models
   During my research of CNN's I discovered that Kaggle had put on a challenge to see who could train the best dog breed classification network on their own dataset of 133 breeds.
 
-  [srikantrao]("https://github.com/srikantrao") on GitHub had an especially thorough and verbose Jupyter Notebook on his [implementation]("https://github.com/srikantrao/Dog-Breed-Classifier/blob/master/README.md") of a InceptionV3 and Keras to classify dog breeds.
+  [srikantrao]( https://github.com/srikantrao ) on GitHub had an especially thorough and verbose Jupyter Notebook on his [implementation]( https://github.com/srikantrao/Dog-Breed-Classifier/blob/master/README.md ) of a InceptionV3 and Keras to classify dog breeds.
 
   After copying his code, and the InceptionV3 model, and training those on my own dataset the model was able to achieve **88%** accuracy! An 8% increase from the last iteration.
 
@@ -168,7 +168,7 @@ This section is for someone who wants to build a similar project as DoggyDoor an
  The final steps were to clean up the code, make sure the DoggyDoor.py file contained methods that could interact with flask, and to create a sleek interface that users would find intuitive and informative.
 
 
-I'd like to acknowledge all the sources below that made this project possible, and especially thank [srikantrao]("https://github.com/srikantrao") and his hard work on the model that allowed DoggyDoor to reach that extra 8% accuracy!
+I'd like to acknowledge all the sources below that made this project possible, and especially thank [srikantrao]( https://github.com/srikantrao ) and his hard work on the model that allowed DoggyDoor to reach that extra 8% accuracy!
 
 ## Future Improvements
 As this is my first ML project I wasn't able to build it out to the extent that I would have liked to. In the future I would like to be able to get my own models up to the validation accuracy that I find acceptable.
@@ -177,9 +177,9 @@ While I was only able to train my own model to 80% accuracy this time, I'm alway
 
 
 ## Acknowledgments
-* [srikantrao]("https://github.com/srikantrao")
-* [Sentdex]("https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ")
-* [Dog Dataset]("http://vision.stanford.edu/aditya86/ImageNetDogs/")
+* [srikantrao]( https://github.com/srikantrao )
+* [Sentdex]( https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ )
+* [Dog Dataset]( http://vision.stanford.edu/aditya86/ImageNetDogs/ )
 
 ## 📜 License
 This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details
