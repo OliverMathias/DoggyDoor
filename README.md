@@ -32,12 +32,12 @@ This project uses a machine learning algorithm, and an interactive web interface
   * [Standalone Website](#standalone-website)
   * [Existing Website Integration](#existing-website-integration)
 * [How it was Built](#how-it-was-built)
-  * [Learning About Keras](#learning-about-keras)
-  * [Convolutional Neural Networks](#convolutional-neural-networks)
-  * [Initial CNN Architectures](#initial-cnn-architectures)
-  * [Transfer Learning](#transfer-learning)
-  * [Pretrained Models](#pretrained-models)
-  * [Putting it All Together](#putting-it-all-together)
+  * [Learning About Keras](#1.-learning-about-keras)
+  * [Convolutional Neural Networks](#2.-convolutional-neural-networks)
+  * [Initial CNN Architectures](#3.-initial-cnn-architectures)
+  * [Transfer Learning](#4.-transfer-learning)
+  * [Pretrained Models](#5.-pretrained-models)
+  * [Putting it All Together](#6.-putting-it-all-together)
 * [Future Improvements](#future-improvements)
 * [Acknowledgments](#acknowledgments)
 * [License](#-license)
@@ -111,14 +111,14 @@ Obviously this is a very simple implementation of a dog breed classification alg
 
 This section is for someone who wants to build a similar project as DoggyDoor and wants some help finding resources and common mistakes.
 
- #### 1. Learning About Keras
+* #### 1. Learning About Keras
   Before starting this project I had no idea what Keras was. Most of my machine learning knowledge and practice has come from [Andrew Ng's free Machine Learning course]("https://www.coursera.org/learn/machine-learning"), which is almost 10 years old and based mostly in MatLab. In order to get acquainted with modern machine learning practices in Python I followed a short [tutorial]("https://www.youtube.com/watch?v=wQ8BIBpya2k") on Keras in the similar arena of Digit Classification.
 
   ![digits](./images/ipy.JPG)
 
   This is really a great [tutorial]("https://www.youtube.com/watch?v=wQ8BIBpya2k") for beginners and I would highly recommend [Sentdex]("https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ") (the author) as a learning resource for AI overall.
 
- #### 2. Convolutional Neural Networks
+* #### 2. Convolutional Neural Networks
   The next step after getting some practice with Keras was to build a simple Convolutional Neural Network, or CNN. This network architecture is the backbone for image classification and If I was to build a classifier for anything more complex than digits I would need more practice. Amazingly, [Sentdex]("https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ") had an entire [tutorial series]("https://www.youtube.com/watch?v=gT4F3HGYXf4") on building CNN's in Keras to classify Dogs and Cats!
 
   I followed along with his tutorial, making a few adjustments as I went to prepare the first model to classify 120 dog breeds instead of a binary classification between dogs and cats.
@@ -129,7 +129,7 @@ This section is for someone who wants to build a similar project as DoggyDoor an
 
   Again, I cannot recommend his [video series]("https://www.youtube.com/watch?v=gT4F3HGYXf4") highly enough!
 
- #### 3. Initial CNN Architectures
+* #### 3. Initial CNN Architectures
   Now, armed with my new knowledge on CNN's and image classification, I set off to train a basic network to classify 120 different dog breeds. How hard could it be? I watched a tutorial after all.
 
   Turns out, this is an extremely different problem to the one of binary classification that Sentdex had showcased in his tutorial. The same network from the tutorial achieved a measly **4% validation accuracy**.
@@ -144,7 +144,7 @@ This section is for someone who wants to build a similar project as DoggyDoor an
 
   ![digits](./images/tensorboard1.JPG)
 
- #### 4. Transfer Learning
+* #### 4. Transfer Learning
  At this point I had reached near the limits of the architecture of CNN I was using and after further research, discovered that by implementing a top layer trained on other images, and retraining it, I could pass on new and more features that my CNN could then interpret.  
 
  This strategy is called '[Transfer Learning]("https://machinelearningmastery.com/transfer-learning-for-deep-learning/")' and has been found to greatly increase the accuracy of image classification networks. It also cuts down on the training time needed to achieve that increased accuracy.
@@ -157,14 +157,14 @@ This section is for someone who wants to build a similar project as DoggyDoor an
 
 ![digits](./images/tensorboard2.JPG)
 
- #### 5. Pretrained Models
+* #### 5. Pretrained Models
   During my research of CNN's I discovered that Kaggle had put on a challenge to see who could train the best dog breed classification network on their own dataset of 133 breeds.
 
   [srikantrao]("https://github.com/srikantrao") on GitHub had an especially thorough and verbose Jupyter Notebook on his [implementation]("https://github.com/srikantrao/Dog-Breed-Classifier/blob/master/README.md") of a InceptionV3 and Keras to classify dog breeds.
 
   After copying his code, and the InceptionV3 model, and training those on my own dataset the model was able to achieve **88%** accuracy! An 8% increase from the last iteration.
 
- #### 6. Putting it All Together
+* #### 6. Putting it All Together
  The final steps were to clean up the code, make sure the DoggyDoor.py file contained methods that could interact with flask, and to create a sleek interface that users would find intuitive and informative.
 
 
