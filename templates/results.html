@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>DoggyDoor</title>
+
+  <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #CAE1FF;
+}
+
+/*
+essential styles:
+these make the slideshow work
+*/
+#slides{
+    position: relative;
+    height: 300px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.slide{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing{
+    opacity: 1;
+    z-index: 2;
+}
+
+.button{
+  background-color: white;
+  color: black;
+  border: 2px solid #334DC6;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family:sans-serif;
+}
+
+</style>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white static-top">
+    <div class="container">
+      <a href="#" class="pull-left"><img src="../static/images/logo.png" style='position:absolute; top:0; left:0;'></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="text-center" style='border-bottom: 2px solid #324dc5; color:#324dc5; font-weight: bold; padding-top:10px;padding-bottom:10px;'>Breed Guess: {{ guess }}</h3>
+        <img src="{{imgpath}}" class="center" style='width: 80%; height: 80%; display: block; margin-left: auto; margin-right: auto;' /> </img>
+
+      </div>
+
+      <div class="col-6" >
+        <h3 class="text-center" style='border-bottom: 2px solid #324dc5; color:#324dc5; font-weight: bold; padding-top:10px;padding-bottom:10px;'>Algorithm Confidence (in %)</h3>
+        <div>
+          <canvas id="chart" width="80%" height="80%"></canvas>
+        </div>
+        <script>
+
+        var values = {{ pie_values|safe }};
+        var labels = {{ pie_labels|safe }};
+        var colors = {{ pie_colors|safe }};
+
+
+        var chart = new Chart(document.getElementById("chart"), {
+              type: 'pie',
+              data: {
+                labels: labels,
+                datasets: [{
+                  label: "Series 01",
+                  backgroundColor: colors,
+                  data: values
+                }]
+              },
+              options: {
+                legend: {
+                  position: 'bottom',
+                  labels: {
+                    /* here one can adjust the legend's labels, if required */
+                    // generateLabels: function(chart) {}
+                  }
+                }
+              }
+          });
+        </script>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-6" >
+          <h3 class="text-center" style='border-bottom: 2px solid #324dc5; color:#324dc5; font-weight: bold; padding-top:10px;padding-bottom:10px;'> Breed Charactaristics </h3>
+            <table>
+              <tr>
+                <td>Temperament:</td>
+                <td>{{ Temperament }}</td>
+              </tr>
+              <tr>
+                <td>Height:</td>
+                <td>{{ Height }}</td>
+              </tr>
+              <tr>
+                <td>Weight:</td>
+                <td>{{ Weight }}</td>
+              </tr>
+              <tr>
+                <td>Life Expectancy:</td>
+                <td>{{ Life }}</td>
+              </tr>
+              <tr>
+                <td>Group:</td>
+                <td><a href="{{ Group_Link }}">{{ Group }}</a></td>
+              </tr>
+              <tr>
+                <td>Dog In Photo:</td>
+                <td>{{ dog_detected }}</td>
+              </tr>
+              <tr>
+                <td>Human in Photo:</td>
+                <td>{{ human_detected }}</td>
+              </tr>
+            </table>
+        </div>
+
+        <div class="col-6" >
+          <h3 class="text-center" style='border-bottom: 2px solid #324dc5; color:#324dc5; font-weight: bold; padding-top:10px;padding-bottom:10px;'> Pictures of Breed</h3>
+          <!-- Photo Grid -->
+          <ul id="slides">
+          <img class="slide showing" src="{{ img1 }}"></img>
+          <img class="slide" src="{{ img2 }}"></img>
+          <img class="slide" src="{{ img3 }}"></img>
+          <img class="slide" src="{{ img4 }}"></img>
+          <img class="slide" src="{{ img5 }}"></img>
+          </ul>
+        <script>
+          var slides = document.querySelectorAll('#slides .slide');
+            var currentSlide = 0;
+            var slideInterval = setInterval(nextSlide,2000);
+
+            function nextSlide(){
+                slides[currentSlide].className = 'slide';
+                currentSlide = (currentSlide+1)%slides.length;
+                slides[currentSlide].className = 'slide showing';
+            }
+        </script>
+      </div>
+  </div>
+
+<div class="row">
+  <div class="col s10 text-center" style="padding-top:50px;padding-bottom:50px;">
+    <form action="{{ url }}">
+    <input type="submit" class="button" value="Learn More About {{ guess }}s" />
+    </form>
+  </div>
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+torchvision
+torch
+pillow
+opencv-python
+matplotlib
+numpy
+glob3
+tqdm
+flask
+bs4
