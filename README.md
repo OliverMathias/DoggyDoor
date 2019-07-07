@@ -32,7 +32,7 @@ This project uses a machine learning algorithm, and an interactive web interface
   * [Standalone Website](#standalone-website)
   * [Existing Website Integration](#existing-website-integration)
 * [How it was Built](#how-it-was-built)
-  * [Learning About Keras](#1.-learning-about-keras)
+  * [1. Learning About Keras](#1.-learning-about-keras)
   * [Convolutional Neural Networks](#2.-convolutional-neural-networks)
   * [Initial CNN Architectures](#3.-initial-cnn-architectures)
   * [Transfer Learning](#4.-transfer-learning)
